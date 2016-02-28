@@ -48,7 +48,6 @@ group :development, :test do
 
   gem 'terminal-notifier-guard'
   gem 'shoulda-matchers'
-  gem 'rack-cors', require: 'rack/cors'
 
   gem 'puma'
 end
@@ -69,3 +68,4 @@ end
 group :production do
   gem 'rails_12factor'
 end
+gem 'rack-cors', require: 'rack/cors'
