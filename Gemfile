@@ -61,7 +61,7 @@ gem 'cancancan'
 group :development do
   gem 'seed_dump'
   gem 'web-console'
-  gem 'rails_db'
+#  gem 'rails_db'
 end
 
 group :production do
