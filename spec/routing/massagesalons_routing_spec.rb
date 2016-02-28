@@ -5,6 +5,4 @@ RSpec.describe MassagesalonsController, type: :routing do
    it { should route(:get, '/massagesalons/1').to("massagesalons#show", id: "1") }
 #it{should route(:get, '/massagesalons/1/reviews').to("massagesalon_reviews#index", id: "1")}
 
-
-
 end
