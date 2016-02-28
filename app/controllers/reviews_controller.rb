@@ -10,6 +10,18 @@ class ReviewsController < ApplicationController
     }
    end
 
+def create
+  review = Review.new(review_params)
+  if review.save
+    render json:{review: review}
+  else
+    render json: { message: "Coulde not save the review",
+    errors: review.errors}, status: :unprocessible_entity
+  end
+end
+
+
+
   private
 
   def set_massagesalon
