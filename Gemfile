@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
@@ -38,7 +37,6 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
 
-
   # Spring speeds up development keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-commands-rspec'
@@ -51,17 +49,21 @@ group :development, :test do
   gem 'terminal-notifier-guard'
   gem 'shoulda-matchers'
 
+  gem 'rack-cors', require: 'rack/cors'
+
+  gem 'puma'
 end
 
-
-group :development do
-
-gem 'web-console'
-gem 'rails_db'
-
-
-end
-gem 'seed_dump'
 gem 'carrierwave'
 gem 'devise'
 gem 'cancancan'
+
+group :development do
+  gem 'seed_dump'
+  gem 'web-console'
+  gem 'rails_db'
+end
+
+group :production do
+  gem 'rails_12factor'
+end
