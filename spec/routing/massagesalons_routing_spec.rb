@@ -1,7 +1,10 @@
+require 'rails_helper'
 RSpec.describe MassagesalonsController, type: :routing do
-  describe "routing" do
 
-    it "routes to #index" do
-      expect(get: "/").to route_to("massagesalons#index")
-    end
+   it { should route(:get, '/').to(action: :index) }
+   it { should route(:get, '/massagesalons/1').to("massagesalons#show", id: "1") }
+#it{should route(:get, '/massagesalons/1/reviews').to("massagesalon_reviews#index", id: "1")}
+
+
+
 end
