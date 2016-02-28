@@ -5,7 +5,7 @@ class MassagesalonsController < ApplicationController
         count: Massagesalon.count,
         page: 0
       },
-      massagesalons: Massagesalon.order(id: :desc)
+      massagesalons: Massagesalon.order(id: :asc)
     }
   end
 
