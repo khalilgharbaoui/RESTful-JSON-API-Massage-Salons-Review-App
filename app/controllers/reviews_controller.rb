@@ -10,17 +10,39 @@ class ReviewsController < ApplicationController
     }
    end
 
-def create
-  review = Review.new(review_params)
-  if review.save
-    render json:{review: review}
-  else
-    render json: { message: "Coulde not save the review",
-    errors: review.errors}, status: :unprocessible_entity
+  def create
+    review = Review.new(review_params)
+    if review.save
+      render json: { review: review }
+    else
+      render json: { message: 'Coulde not save the review',
+                     errors: review.errors }, status: :unprocessible_entity
+    end
   end
-end
 
+  def update
+    review = Review.find(params[:id])
+    if review.update(review_params)
+      render json: { review: review }
+    else
+      render json: {
+        message: 'Could not update the Review',
+        errors: review.errors
+      }, status: :unprocessible_entity
+    end
+  end
 
+  def destroy
+    review = Review.find(params[:id])
+
+    if review.destroy
+      render json: {task: nil}
+    else
+      render json: {
+        message: 'Could not remove the review'
+      }, status: :unprocessible_entity
+    end
+  end
 
   private
 
@@ -29,6 +51,6 @@ end
   end
 
   def task_params
-    params.require(:review).permit(:reviewer_name, :review , :rating, :massagesalon_id)
+    params.require(:review).permit(:reviewer_name, :review, :rating, :massagesalon_id)
   end
 end
