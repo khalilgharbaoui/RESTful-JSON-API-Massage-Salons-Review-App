@@ -45,12 +45,15 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-bundler'
-  gem 'rb-fsevent' if `uname` =~ /Darwin/
+
   gem 'terminal-notifier-guard'
   gem 'shoulda-matchers'
   gem 'rack-cors', require: 'rack/cors'
 
   gem 'puma'
+end
+group :test, :darwin do
+  gem 'rb-fsevent'
 end
 
 gem 'carrierwave'
