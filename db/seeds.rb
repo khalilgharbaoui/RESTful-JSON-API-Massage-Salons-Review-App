@@ -6,5 +6,5 @@ Massagesalon.create!([
 Review.create!([
   {reviewer_name: "John Doe", review: "This is greate place", rating: 1, massagesalon_id: 1},
   {reviewer_name: "Jane Doe", review: "this plase sucks", rating: 3, massagesalon_id: 2},
-  {reviewer_name: "Ahmed mohammer somalia", review: "waw i like it", rating: 3, massagesalon_id: 3}
+  {reviewer_name: "Clark Kent", review: "waw i like it", rating: 3, massagesalon_id: 3}
 ])
