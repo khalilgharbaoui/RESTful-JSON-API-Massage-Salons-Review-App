@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 20160228032804) do
   create_table "reviews", force: :cascade do |t|
     t.string   "reviewer_name"
     t.text     "review"
-    t.integer  "rating"
+    t.integer  "rating",          default: 1
     t.integer  "massagesalon_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "reviews", ["massagesalon_id"], name: "index_reviews_on_massagesalon_id", using: :btree

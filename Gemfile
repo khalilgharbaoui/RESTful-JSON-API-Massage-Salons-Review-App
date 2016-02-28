@@ -48,6 +48,7 @@ group :development, :test do
   gem 'rb-fsevent' if `uname` =~ /Darwin/
   gem 'terminal-notifier-guard'
   gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
 
   gem 'rack-cors', require: 'rack/cors'
 
