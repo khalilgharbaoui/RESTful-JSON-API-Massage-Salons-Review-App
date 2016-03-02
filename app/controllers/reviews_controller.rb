@@ -50,7 +50,7 @@ class ReviewsController < ApplicationController
     @massagesalon = Massagesalon.find(params[:massagesalon_id])
   end
 
-  def task_params
+  def review_params
     params.require(:review).permit(:reviewer_name, :review, :rating, :massagesalon_id)
   end
 end
