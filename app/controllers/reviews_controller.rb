@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
       },
       reviews: @massagesalon.reviews.all
     }
+    average_rating:
    end
 
   def create
@@ -45,6 +46,9 @@ class ReviewsController < ApplicationController
   end
 
   private
+def average_rating
+  Review.average(:rating)
+end
 
   def set_massagesalon
     @massagesalon = Massagesalon.find(params[:massagesalon_id])

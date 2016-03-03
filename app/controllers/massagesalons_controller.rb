@@ -1,18 +1,21 @@
 class MassagesalonsController < ApplicationController
   def index
+    massagesalons = Massagesalon.order(id: :asc)
     render json: {
       meta: {
         count: Massagesalon.count,
         page: 0
       },
-      massagesalons: Massagesalon.order(id: :asc)
+      massagesalons: massagesalons.as_json({include: :reviews, methods: :average_rating})
     }
   end
 
   def show
     massagesalon = Massagesalon.find(params[:id])
+    average_rating = massagesalon.average_rating
     render json: {
-      massagesalon: massagesalon
+      massagesalon: massagesalon,
+      average_rating: average_rating
     }
   end
 
