@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
       },
       reviews: @massagesalon.reviews.all
     }
-    average_rating:
    end
 
   def create
